@@ -1,5 +1,5 @@
-console.log("hello world");
 
+//Defining questions for the quiz
 var questions = [
     {
         question: "What is navigating the DOM called?",
@@ -32,9 +32,13 @@ var questions = [
         answer: "console.log"
     },
 ]
-
-
-
+//Assigning variables for the other elements
+var timerEl = document.querySelector(".Time");
 var questionEl = document.querySelector(".code__quiz__questions");
+var optionsEl = document.querySelector("code__quiz__options");
+var score = 0;
+var currentQuestionIndex = 0;
+var timeLeft = 60;
+
 
 questionEl.textContent = "What is the meaning of life?"
