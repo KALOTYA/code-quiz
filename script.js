@@ -40,5 +40,12 @@ var score = 0;
 var currentQuestionIndex = 0;
 var timeLeft = 60;
 
-
-questionEl.textContent = "What is the meaning of life?"
+//Function to start the quiz
+function startQuiz () {
+    //Hide start button
+    document.querySelector(".start").computedStyleMap.display = "none";
+    //Display first question
+    displayQuestion();
+    //Start the timer
+    startTimer();
+}
