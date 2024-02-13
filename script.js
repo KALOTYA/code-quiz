@@ -107,3 +107,11 @@ function startTimer() {
     }, 1000);
 };
 
+//Fucntion to end the quiz
+function endQuiz() {
+    document.querySelector(".scoreboard").style.display = "block";
+
+    document.querySelector(".scoreboard__highscore__display").textContent = "Your Score: " + score;
+};
+
+document.querySelector(".start").addEventListener("click", startQuiz);
