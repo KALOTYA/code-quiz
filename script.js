@@ -48,4 +48,22 @@ function startQuiz () {
     displayQuestion();
     //Start the timer
     startTimer();
-}
+};
+
+//Functions to display questions and possible answers 
+function displayQuestion() {
+    //Display question
+    var currentQuestion = questions[currentQuestionIndex];
+    questionEl.textContent = currentQuestion.question;
+    optionsEl.innerHTML = "";
+
+    //Display options for questions
+    currentQuestion.options.forEach(function(option) {
+        var button = document.createElement("button");
+        button.textContent = option;
+        button.classList.add("option");
+        button.addEventListener("click", checkAnswer);
+        optionsEl.appendChild(button);
+    });
+};
+
