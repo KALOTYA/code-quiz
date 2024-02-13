@@ -43,7 +43,7 @@ var timeLeft = 60;
 //Function to start the quiz
 function startQuiz () {
     //Hide start button
-    document.querySelector(".start").computedStyleMap.display = "none";
+    document.querySelector(".start").style.display = "none";
     //Display first question
     displayQuestion();
     //Start the timer
