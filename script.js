@@ -94,3 +94,16 @@ function checkAnswer(event) {
 
 };
 
+//Function to start the quiz timer
+function startTimer() {
+    var timerInterval = setInterval(function() {
+        timeLeft--;
+        timerEl.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            endQuiz();
+        }
+    }, 1000);
+};
+
