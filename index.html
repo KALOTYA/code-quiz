@@ -10,40 +10,44 @@
 </head>
 
 <body>
-    <header>
-        <h1>Code Quiz</h1>
-        <h4>How smart are you?</h4>
+    <header class="bg-dark text-light py-3">
+        <div class="container">
+            <h1 class="mb-0">Code Quiz</h1>
+            <h4 class="mb-0">How smart are you?</h4>
+        </div>
+        
     </header>
-    <main>
+    <main class="py-4">
+
+        <div class="container">
+            <section class="code__quiz bg-light p-4 mb-4">
+                <div class="code__quiz__timer mb-3">Time: <span class="Time">60</span></div>
+                <div class="code__quiz__questions mb-3">What is navigating the DOM called?</div>
+                <div class="code__quiz__options">
+                    <button class="option mb-2">Option 1</button>
+                    <button class="option mb-2">Option 2</button>
+                    <button class="option mb-2">Option 3</button>
+                </div>
+                <div class="code__quiz__key">Correct or incorrect</div>
+                <button class="btn btn-success start mt-3">Start</button>
+
+
+            </section>
         
-        <section class="code__quiz">
-            <div class="code__quiz__timer">Time: <span class="Time">60</span></div>
-            <div class="code__quiz__questions">What is navigating the DOM called?</div>
-            <div class="code__quiz__options">
-                <button class="option">Option 1</button>
-                <button class="option">Option 2</button>
-                <button class="option">Option 3</button>
-            </div>
-            <div class="code__quiz__key">Correct or incorrect</div>
-            <button class="start">Start</button>
+            <section class="scoreboard bg-light p-4">
+                <div class="scoreboard__highscore mb-3">
 
+                    <div class="scoreboard__highscore__display mb-3">highscore here</div>
+                    <input type="text" id="initials" class="form-control mb-2" placeholder="initials" required minlength="1" maxlength="3">
+                    <button class="btn btn-primary scoreboard__highscore__submit">Submit</button>
+                    <ul class="actualscoreboard mt-3">
+                        <li>score 1</li>
+                        <li>score 2</li>
+                    </ul>
 
-        </section>
-        
-        <section class="scoreboard">
-            <div class="scoreboard__highscore">
-
-                <div class="scoreboard__highscore__display">highscore here</div>
-                <input type="text" id="initials" placeholder="initials" required minlength="1" maxlength="3" size="10">
-                <button class="scoreboard__highscore__submit">Submit</button>
-                <ul class="actualscoreboard">
-                    <li>score 1</li>
-                    <li>score 2</li>
-                </ul>
-
-            </div>
-        </section>
-    
+                </div>
+            </section>
+        </div>
     
     
     
