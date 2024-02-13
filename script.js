@@ -35,7 +35,7 @@ var questions = [
 //Assigning variables for the other elements
 var timerEl = document.querySelector(".Time");
 var questionEl = document.querySelector(".code__quiz__questions");
-var optionsEl = document.querySelector("code__quiz__options");
+var optionsEl = document.querySelector(".code__quiz__options");
 var score = 0;
 var currentQuestionIndex = 0;
 var timeLeft = 60;
@@ -74,12 +74,12 @@ function checkAnswer(event) {
 
     if (selectedOption === correctAnswer) {
         //Correct answer
-        document.querySelector("code__quiz__key").textContent = "Correct!";
+        document.querySelector(".code__quiz__key").textContent = "Correct!";
         score++;
     
     } else {
         //Inncorrect Answer
-        document.querySelector("code__quiz__key").textContent = "Incorrect!";
+        document.querySelector(".code__quiz__key").textContent = "Incorrect!";
         //subtract timer by 15 seconds if user is incorrect
         timeLeft -= 15;
     }
