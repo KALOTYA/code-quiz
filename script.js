@@ -67,3 +67,30 @@ function displayQuestion() {
     });
 };
 
+//function to check users answer
+function checkAnswer(event) {
+    var selectedOption = event.target.textContent;
+    var correctAnswer = questions[currentQuestionIndex].answer;
+
+    if (selectedOption === correctAnswer) {
+        //Correct answer
+        document.querySelector("code__quiz__key").textContent = "Correct!";
+        score++;
+    
+    } else {
+        //Inncorrect Answer
+        document.querySelector("code__quiz__key").textContent = "Incorrect!";
+        //subtract timer by 15 seconds if user is incorrect
+        timeLeft -= 15;
+    }
+
+    //Move to next question or end quiz based on length in question array
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+    } else {
+        endQuiz();
+    }
+
+};
+
