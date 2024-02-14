@@ -1,3 +1,24 @@
 h1 {
-    color: red;
+    color: purple;
+}
+
+.code__quiz__questions {
+    font-weight: bold;
+    
+}
+
+body {
+    background-color: darkgray;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: darkgray;
+    color: purple;
+}
+
+.actualscoreboard {
+    text-align: start;
+
 }
