@@ -112,6 +112,17 @@ function endQuiz() {
     document.querySelector(".scoreboard").style.display = "block";
 
     document.querySelector(".scoreboard__highscore__display").textContent = "Your Score: " + score;
+    document.querySelector(".start").style.display = "block";
 };
 
 document.querySelector(".start").addEventListener("click", startQuiz);
+
+//function to handle scoreboard submission
+document.querySelector(".scoreboard__highscore__submit").addEventListener("click", function() {
+    var initials = document.getElementById("initials").value;
+    if (initials !== "") {
+        var scoreItem = document.createElement("li");
+        scoreItem.textContent = initials + ": " + score;
+        document.querySelector(".actualscoreboard").appendChild(scoreItem);
+    }
+})
