@@ -125,4 +125,5 @@ document.querySelector(".scoreboard__highscore__submit").addEventListener("click
         scoreItem.textContent = initials + ": " + score;
         document.querySelector(".actualscoreboard").appendChild(scoreItem);
     }
+    
 })
