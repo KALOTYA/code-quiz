@@ -130,15 +130,18 @@ function endQuiz() {
 };
 
 document.querySelector(".start").addEventListener("click", startQuiz);
+var highscoreSubmitted = false;
 
 //function to handle scoreboard submission
 document.querySelector(".scoreboard__highscore__submit").addEventListener("click", function() {
     var initials = document.getElementById("initials").value;
     //checking if initials are provided or score is more than 0
-    if (initials !== "" && score > 0) {
+    if (initials !== "" && score > 0 && !highscoreSubmitted) {
         var scoreItem = document.createElement("li");
         scoreItem.textContent = initials + ": " + score;
         document.querySelector(".actualscoreboard").appendChild(scoreItem);
+        this.disabled = true;
+        highscoreSubmitted = true;
     }
 
 })
