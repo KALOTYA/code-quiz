@@ -42,6 +42,14 @@ var timeLeft = 60;
 
 //Function to start the quiz
 function startQuiz () {
+    //reset the quiz to allow user to restart after completed
+    score = 0;
+    currentQuestionIndex = 0;
+    timeLeft = 60;
+    //clears the message
+    document.querySelector(".code__quiz__key").textContent = "";
+    //hide scoreboard
+    document.querySelector(".scoreboard").style.display = "none";
     //Hide start button
     document.querySelector(".start").style.display = "none";
     //Display first question
@@ -125,5 +133,5 @@ document.querySelector(".scoreboard__highscore__submit").addEventListener("click
         scoreItem.textContent = initials + ": " + score;
         document.querySelector(".actualscoreboard").appendChild(scoreItem);
     }
-    
+
 })
