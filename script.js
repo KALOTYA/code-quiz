@@ -39,6 +39,7 @@ var optionsEl = document.querySelector(".code__quiz__options");
 var score = 0;
 var currentQuestionIndex = 0;
 var timeLeft = 60;
+var timerInterval;
 
 //Function to start the quiz
 function startQuiz () {
@@ -102,13 +103,14 @@ function checkAnswer(event) {
 
 };
 
+
 //Function to start the quiz timer
 function startTimer() {
     var timerInterval = setInterval(function() {
         timeLeft--;
         timerEl.textContent = timeLeft;
 
-        if (timeLeft <= 0) {
+        if (timeLeft <= 0 || currentQuestionIndex >= questions.length) {
             clearInterval(timerInterval);
             endQuiz();
         }
