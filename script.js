@@ -117,9 +117,13 @@ function startTimer() {
 
 //Fucntion to end the quiz
 function endQuiz() {
+    //stopping the timer after quiz is done
+    clearInterval(timerInterval);
+    //displaying the score board
     document.querySelector(".scoreboard").style.display = "block";
-
+    //display the score of the user
     document.querySelector(".scoreboard__highscore__display").textContent = "Your Score: " + score;
+    //display the start button so user can retake quiz
     document.querySelector(".start").style.display = "block";
 };
 
@@ -128,7 +132,8 @@ document.querySelector(".start").addEventListener("click", startQuiz);
 //function to handle scoreboard submission
 document.querySelector(".scoreboard__highscore__submit").addEventListener("click", function() {
     var initials = document.getElementById("initials").value;
-    if (initials !== "") {
+    //checking if initials are provided or score is more than 0
+    if (initials !== "" && score > 0) {
         var scoreItem = document.createElement("li");
         scoreItem.textContent = initials + ": " + score;
         document.querySelector(".actualscoreboard").appendChild(scoreItem);
