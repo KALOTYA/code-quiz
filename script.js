@@ -59,6 +59,7 @@ function startQuiz () {
     displayQuestion();
     //Start the timer
     startTimer();
+    //Reset the highscore submission flag
     highscoreSubmitted = false;
 };
 
@@ -130,11 +131,13 @@ function endQuiz() {
     document.querySelector(".scoreboard__highscore__display").textContent = "Your Score: " + score;
     //display the start button so user can retake quiz
     document.querySelector(".start").classList.add("mx-auto");
+    //Making sure the start button reappears in the center using bootstrap.
     document.querySelector(".start").style.display = "block";
+    //Reset the highscore
     highscoreSubmitted = false;
     
 };
-
+//Eveent listener for the start button to start the quiz
 document.querySelector(".start").addEventListener("click", startQuiz);
 
 
@@ -143,8 +146,11 @@ document.querySelector(".scoreboard__highscore__submit").addEventListener("click
     var initials = document.getElementById("initials").value;
     //checking if initials are provided or score is more than 0
     if (initials !== "" && score >= 0 && !highscoreSubmitted) {
+        //creating a new list element for the score
         var scoreItem = document.createElement("li");
+        //creating the contents placed in the new list item
         scoreItem.textContent = initials + ": " + score;
+        //Appending the new list item to the scoreboard
         document.querySelector(".actualscoreboard").appendChild(scoreItem);
         highscoreSubmitted = true;
     }
