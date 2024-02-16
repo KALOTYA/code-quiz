@@ -40,12 +40,12 @@ var score = 0;
 var currentQuestionIndex = 0;
 var timeLeft = 60;
 var timerInterval;
+var highscoreSubmitted = false;
 
 
 //Function to start the quiz
 function startQuiz () {
     //reset the quiz to allow user to restart after completed
-    var highscoreSubmitted = false;
     score = 0;
     currentQuestionIndex = 0;
     timeLeft = 60;
@@ -59,6 +59,7 @@ function startQuiz () {
     displayQuestion();
     //Start the timer
     startTimer();
+    highscoreSubmitted = false;
 };
 
 //Functions to display questions and possible answers 
@@ -144,7 +145,6 @@ document.querySelector(".scoreboard__highscore__submit").addEventListener("click
         var scoreItem = document.createElement("li");
         scoreItem.textContent = initials + ": " + score;
         document.querySelector(".actualscoreboard").appendChild(scoreItem);
-        this.disabled = true;
         highscoreSubmitted = true;
     }
 
