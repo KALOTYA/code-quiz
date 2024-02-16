@@ -129,6 +129,7 @@ function endQuiz() {
     //display the score of the user
     document.querySelector(".scoreboard__highscore__display").textContent = "Your Score: " + score;
     //display the start button so user can retake quiz
+    document.querySelector(".start").classList.add("mx-auto");
     document.querySelector(".start").style.display = "block";
     highscoreSubmitted = false;
     
